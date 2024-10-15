@@ -1,0 +1,18 @@
+.socialsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 200px;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    list-style-type: none;
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+}
