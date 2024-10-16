@@ -41,6 +41,11 @@ const SwitchTheme = () => {
             '--Switch-trackBackground': 'transparent',
           },
         },
+        '@media (max-width: 425px)': {
+          '--Switch-thumbSize': '20px',
+          '--Switch-trackWidth': '50px',
+          '--Switch-trackHeight': '30px',
+        },
       })}
     />
   );

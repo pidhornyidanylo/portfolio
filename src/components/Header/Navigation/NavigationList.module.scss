@@ -1,76 +1,35 @@
+.navList,
+.navBurgerList {
+  transition: all 0.3s ease;
+}
+
 .navList {
   flex: 1;
   display: flex;
   align-items: center;
   gap: 47px;
-
-  li {
-    list-style-type: none;
-    text-transform: uppercase;
-
-    a {
-      color: var(--main-blue);
-      font-size: 1.2em;
-      font-weight: 600;
-      transition: font-size 0.2s ease;
-      -webkit-transition: font-size 0.2s ease;
-      -moz-transition: font-size 0.2s ease;
-      -ms-transition: font-size 0.2s ease;
-      -o-transition: font-size 0.2s ease;
-
-      &:hover {
-        font-size: 1.24em;
-      }
-    }
-  }
 }
 
 .navBurgerList {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 100px;
   display: none;
   flex: 1;
   gap: 5px;
+  backdrop-filter: blur(90px);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  z-index: 2;
 
-  li {
-    list-style-type: none;
-    text-transform: uppercase;
-
-    a {
-      color: var(--main-blue);
-      font-size: 1.2em;
-      font-weight: 600;
-      transition: font-size 0.2s ease;
-      -webkit-transition: font-size 0.2s ease;
-      -moz-transition: font-size 0.2s ease;
-      -ms-transition: font-size 0.2s ease;
-      -o-transition: font-size 0.2s ease;
-
-      &:hover {
-        font-size: 1.24em;
-      }
-    }
-  }
-}
-
-.burger {
-  width: 50px;
-  height: 30px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  cursor: pointer;
-
-  &:hover {
-  }
-
-  span {
-    width: 100%;
-    height: 4px;
-    background-color: var(--main-blue);
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+  &.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -84,25 +43,11 @@
   .navList {
     justify-content: flex-end;
     gap: 20px;
+  }
+}
 
-    li {
-      list-style-type: none;
-      text-transform: uppercase;
-
-      a {
-        color: var(--main-blue);
-        font-size: 1.1em;
-        font-weight: 600;
-        transition: font-size 0.2s ease;
-        -webkit-transition: font-size 0.2s ease;
-        -moz-transition: font-size 0.2s ease;
-        -ms-transition: font-size 0.2s ease;
-        -o-transition: font-size 0.2s ease;
-
-        &:hover {
-          font-size: 1.24em;
-        }
-      }
-    }
+@media (max-width: 768px) {
+  .navList {
+    display: none;
   }
 }

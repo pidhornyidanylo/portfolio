@@ -118,8 +118,14 @@
     backdrop-filter: blur(10px);
     transform: translateX(0%);
   }
-  100% {
+
+  50% {
     backdrop-filter: blur(50px);
     transform: translateX(-100%);
+  }
+
+  100% {
+    position: absolute;
+    left: -100%;
   }
 }
