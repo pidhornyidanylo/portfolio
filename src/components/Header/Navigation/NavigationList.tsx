@@ -2,11 +2,10 @@
 import React, { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import { debounce } from '@/utils/debounce';
-import RouterItem from './RouterItem/RouterItem';
 import Burger from './Burger/Burger';
-import { gsap } from 'gsap';
 import styles from './NavigationList.module.scss';
-console.log(styles.visible);
+import NavLink from './NavLink/NavLink';
+
 const routesArray = [
   {
     routeName: 'About',
@@ -27,25 +26,9 @@ const routesArray = [
 ];
 
 const NavigationList = () => {
-  const menuRef = useRef<HTMLUListElement | null>(null);
+  const burgerMenuRef = useRef<HTMLUListElement | null>(null);
   const [showBurger, setShowBurger] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-
-  useEffect(() => {
-    const menu = menuRef.current;
-    if (!menu) return;
-    if (showMenu) {
-      gsap.to(menu, {
-        scale: 1,
-        duration: 0.05,
-      });
-    } else {
-      gsap.to(menu, {
-        scale: 0,
-        duration: 0.05,
-      });
-    }
-  }, [showMenu]);
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,6 +36,7 @@ const NavigationList = () => {
         setShowBurger(true);
       } else {
         setShowBurger(false);
+        setShowBurgerMenu(false);
       }
     };
     handleResize();
@@ -62,49 +46,49 @@ const NavigationList = () => {
     return () => window.removeEventListener('resize', debouncedResizeHandler);
   }, []);
 
-  const handleShowMenu = () => {
-    setShowMenu(!showMenu);
+  const toggleShowMenu = () => {
+    setShowBurgerMenu(!showBurgerMenu);
   };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setShowMenu(false);
+      if (
+        burgerMenuRef.current &&
+        !burgerMenuRef.current.contains(e.target as Node)
+      ) {
+        setShowBurgerMenu(false);
       }
     };
     document.addEventListener('click', handleClickOutside);
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [showMenu]);
+  }, [showBurgerMenu]);
 
   return (
     <>
       {showBurger ? (
         <>
-          <Burger handleShowMenu={handleShowMenu} showMenu={showMenu} />
-          <ul
-            ref={menuRef}
-            className={`${styles.navBurgerList} ${showMenu ? styles.visible : ''}`}
-            data-testid='menu-list'
-          >
-            {routesArray.map((routeItem) => (
-              <RouterItem
-                key={routeItem.routeName + '_insideBurgerMenu'}
-                href={routeItem.routeHref}
-                route={routeItem.routeName}
-              />
-            ))}
-          </ul>
+          <Burger toggleShowMenu={toggleShowMenu} showMenu={showBurgerMenu} />
+          {showBurgerMenu && (
+            <ul ref={burgerMenuRef} className={styles.navBurgerList}>
+              {routesArray.map((routeItem) => (
+                <li key={routeItem.routeName + '_insideBurgerMenu'}>
+                  <NavLink
+                    href={routeItem.routeHref}
+                    route={routeItem.routeName}
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
         </>
       ) : (
         <ul className={styles.navList}>
           {routesArray.map((routeItem) => (
-            <RouterItem
-              key={routeItem.routeName}
-              href={routeItem.routeHref}
-              route={routeItem.routeName}
-            />
+            <li key={routeItem.routeName}>
+              <NavLink href={routeItem.routeHref} route={routeItem.routeName} />
+            </li>
           ))}
         </ul>
       )}

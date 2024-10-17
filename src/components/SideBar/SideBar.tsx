@@ -23,7 +23,7 @@ const SideBar = () => {
         applications and skilled in optimizing for performance and user
         experience.
       </p>
-      <div className={styles.asideFooter}>
+      <div className={styles.sidebarFooter}>
         <Socials />
       </div>
     </aside>

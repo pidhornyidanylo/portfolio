@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import styles from './Burger.module.scss';
 
-type BurgerPropsType = {
+type BurgerProps = {
   showMenu: boolean;
-  handleShowMenu: () => void;
+  toggleShowMenu: () => void;
 };
 
-const Burger = ({ handleShowMenu, showMenu }: BurgerPropsType) => {
+const Burger = ({ toggleShowMenu, showMenu }: BurgerProps) => {
   const burgerSpan1 = useRef<HTMLSpanElement | null>(null);
   const burgerSpan2 = useRef<HTMLSpanElement | null>(null);
   const burgerSpan3 = useRef<HTMLSpanElement | null>(null);
@@ -32,7 +32,7 @@ const Burger = ({ handleShowMenu, showMenu }: BurgerPropsType) => {
   return (
     <div
       data-testid='burger'
-      onClick={() => handleShowMenu()}
+      onClick={() => toggleShowMenu()}
       className={styles.burger}
     >
       <span ref={burgerSpan1}></span>

@@ -9,6 +9,19 @@
   li {
     list-style-type: none;
 
+    &:hover {
+      transition: transform 0.2s ease-in;
+      transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      -webkit-transition: transform 0.2s ease-in;
+      -moz-transition: transform 0.2s ease-in;
+      -ms-transition: transform 0.2s ease-in;
+      -o-transition: transform 0.2s ease-in;
+    }
+
     button {
       border: none;
       background-color: transparent;

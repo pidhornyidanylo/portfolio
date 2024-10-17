@@ -2,6 +2,8 @@
   --main-blue: #5671a6;
   --secondary-blue: #cbd6ec;
   --main-gray: #616161;
+  --background-image-light: url('../../public/assets/bg_light.jpg');
+  --background-image-dark: url('../../public/assets/bg_dark.jpg');
 }
 
 :root.dark {
@@ -12,6 +14,7 @@
 
 html,
 body {
+  font-size: 1.05em;
   color: var(--main-gray);
   width: 100vw;
   min-height: 100vh;
@@ -19,18 +22,18 @@ body {
   display: flex;
   flex-direction: column;
   transition: background 0.2s ease-in-out;
-  -webkit-transition: background 0.2s ease-in-out;
-  -moz-transition: background 0.2s ease-in-out;
-  -ms-transition: background 0.2s ease-in-out;
-  -o-transition: background 0.2s ease-in-out;
 }
 
 body {
-  background: url('../../public/assets/bg_light.jpg') no-repeat center/cover;
+  background: var(--background-image-light) no-repeat center/cover;
 }
 
 html.dark body {
-  background: url('../../public/assets/bg_dark.jpg') no-repeat center/cover;
+  background: var(--background-image-dark) no-repeat center/cover;
+}
+
+.invertable-icon {
+  transition: filter 0.2s ease;
 }
 
 html.dark .invertable-icon {
@@ -52,12 +55,40 @@ a {
 main {
   flex: 1;
   display: flex;
+  position: relative;
+  width: 100vw;
 }
 
 .content-container {
   flex: 1;
+  flex-shrink: 0;
   padding: 10px 25px;
   position: relative;
+  transition: padding-left 0.1s ease;
+}
+
+@media (max-width: 992px) {
+  main {
+    display: block;
+  }
+
+  .content-container {
+    padding: 10px 25px 10px 175px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    .content-container {
+      padding-left: 10px;
+    }
+  }
 }
 
 .forbidden-container {
@@ -72,33 +103,25 @@ main {
   right: 0;
   bottom: 0;
   z-index: 1;
+}
 
-  h2 {
-    font-size: 1.5em;
-  }
+.forbidden-container h2 {
+  font-size: 1.5em;
+}
 
-  p {
-    font-size: 1.2em;
-  }
+.forbidden-container p {
+  font-size: 1.2em;
+}
 
-  a {
-    padding: 5px 7px;
-    border-radius: 5px;
-    border: 1px solid var(--main-gray);
-    margin-top: 20px;
-    font-size: 1.5em;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-  }
+.forbidden-container a {
+  padding: 5px 7px;
+  border-radius: 5px;
+  border: 1px solid var(--main-gray);
+  margin-top: 20px;
+  font-size: 1.5em;
+}
 
-  span {
-    margin-top: 50px;
-    transform: scale(5);
-    -webkit-transform: scale(5);
-    -moz-transform: scale(5);
-    -ms-transform: scale(5);
-    -o-transform: scale(5);
-  }
+.forbidden-container span {
+  margin-top: 50px;
+  transform: scale(5);
 }

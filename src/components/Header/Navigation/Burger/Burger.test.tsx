@@ -4,10 +4,10 @@ import Burger from './Burger';
 
 describe('Burger component', () => {
   it('calls handleShowMenu function on click', () => {
-    const handleShowMenu = jest.fn();
-    render(<Burger showMenu={false} handleShowMenu={handleShowMenu} />);
+    const toggleShowMenu = jest.fn();
+    render(<Burger showMenu={false} toggleShowMenu={toggleShowMenu} />);
     const burger = screen.getByTestId('burger');
     fireEvent.click(burger);
-    expect(handleShowMenu).toHaveBeenCalledTimes(1);
+    expect(toggleShowMenu).toHaveBeenCalledTimes(1);
   });
 });

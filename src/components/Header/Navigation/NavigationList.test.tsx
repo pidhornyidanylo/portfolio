@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import NavigationList from './NavigationList';
 
@@ -39,5 +39,32 @@ describe('NavigationList component', () => {
     render(<NavigationList />);
     const burger = screen.getByTestId('burger');
     expect(burger).toBeInTheDocument();
+  });
+
+  it('show burger menu after clicking burger', () => {
+    window.innerWidth = 768;
+    window.dispatchEvent(new Event('resize'));
+    render(<NavigationList />);
+    const burger = screen.getByTestId('burger');
+    expect(burger).toBeInTheDocument();
+    fireEvent.click(burger);
+    expect(screen.getByText('About')).toBeInTheDocument();
+    expect(screen.getByText('Skills')).toBeInTheDocument();
+    expect(screen.getByText('Services')).toBeInTheDocument();
+    expect(screen.getByText('Portfolio')).toBeInTheDocument();
+  });
+
+  it('hides burger menu after double clicking burger', () => {
+    window.innerWidth = 768;
+    window.dispatchEvent(new Event('resize'));
+    render(<NavigationList />);
+    const burger = screen.getByTestId('burger');
+    expect(burger).toBeInTheDocument();
+    fireEvent.click(burger);
+    fireEvent.click(burger);
+    expect(screen.queryByText('About')).not.toBeInTheDocument();
+    expect(screen.queryByText('Skills')).not.toBeInTheDocument();
+    expect(screen.queryByText('Services')).not.toBeInTheDocument();
+    expect(screen.queryByText('Portfolio')).not.toBeInTheDocument();
   });
 });

@@ -11,11 +11,11 @@ const ThemeContext = createContext<ThemeContextType>({
   toggleThemeHandler: () => {},
 });
 
-type ThemePropsType = {
+type ThemeProps = {
   children?: JSX.Element | Array<JSX.Element>;
 };
 
-export const ThemeContextProvider = (props: ThemePropsType): ReactElement => {
+export const ThemeContextProvider = (props: ThemeProps): ReactElement => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
