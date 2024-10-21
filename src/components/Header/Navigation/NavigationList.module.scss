@@ -20,12 +20,14 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  padding: 100px;
+  width: 300px;
+  height: 350px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
-  gap: 5px;
+  display: flex;
+  gap: 7px;
   backdrop-filter: blur(90px);
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -33,6 +35,13 @@
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   z-index: 2;
+
+  .socialsContainer {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 1200px) {

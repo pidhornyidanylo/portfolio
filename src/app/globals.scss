@@ -2,6 +2,8 @@
   --main-blue: #5671a6;
   --secondary-blue: #cbd6ec;
   --main-gray: #616161;
+  --secondary-gray: #383838;
+  --lightgray: #616161;
   --background-image-light: url('../../public/assets/bg_light.jpg');
   --background-image-dark: url('../../public/assets/bg_dark.jpg');
 }
@@ -10,6 +12,8 @@
   --main-blue: #cbd6ec;
   --secondary-blue: #5671a6;
   --main-gray: #cec2c2;
+  --secondary-gray: #eedddd;
+  --lightgray: #e3d3d3;
 }
 
 html,
@@ -62,7 +66,7 @@ main {
 .content-container {
   flex: 1;
   flex-shrink: 0;
-  padding: 10px 25px;
+  padding: 20px 50px;
   position: relative;
   transition: padding-left 0.1s ease;
 }
@@ -73,20 +77,23 @@ main {
   }
 
   .content-container {
-    padding: 10px 25px 10px 175px;
+    padding: 10px 25px 10px 225px;
   }
 }
 
 @media (max-width: 768px) {
   .content-container {
     padding-left: 25px;
+    .socialsList {
+      position: absolute;
+    }
   }
 }
 
 @media (max-width: 576px) {
   main {
     .content-container {
-      padding-left: 10px;
+      padding: 10px;
     }
   }
 }

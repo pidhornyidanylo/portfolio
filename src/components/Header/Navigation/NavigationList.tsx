@@ -5,6 +5,7 @@ import { debounce } from '@/utils/debounce';
 import Burger from './Burger/Burger';
 import styles from './NavigationList.module.scss';
 import NavLink from './NavLink/NavLink';
+import Socials from '@/components/Socials/Socials';
 
 const routesArray = [
   {
@@ -80,6 +81,9 @@ const NavigationList = () => {
                   />
                 </li>
               ))}
+              <div className={styles.socialsContainer}>
+                <Socials />
+              </div>
             </ul>
           )}
         </>

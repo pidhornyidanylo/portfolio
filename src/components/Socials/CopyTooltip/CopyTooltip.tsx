@@ -42,6 +42,7 @@ const CopyTooltip = ({ copyText, imgSrc, alt }: CopyTooltipProps) => {
         onMouseLeave={() => setCopiedToClipboard(false)}
         onClick={() => handleButtonClick(copyText)}
         aria-label={`Copy ${alt}`}
+        data-testid='copy-btn'
       >
         <Image
           className='invertable-icon'

@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  height: 100%;
+  gap: 30px;
+  flex-direction: column;
+
+  .aboutSection {
+    .title {
+      color: var(--main-blue);
+      font-size: 1.7em;
+      font-weight: 500;
+    }
+
+    .info {
+      color: var(--main-gray);
+      max-width: 100%;
+      @media (max-width: 992px) {
+        text-align: justify;
+      }
+    }
+
+    .aboutItemsContainer {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 100px;
+
+      @media (max-width: 535px) {
+        gap: 20px;
+      }
+    }
+  }
+
+  .qalificationSection {
+    flex: 1;
+
+    .title {
+      color: var(--main-blue);
+      font-size: 1.7em;
+      font-weight: 500;
+      margin-bottom: 13px;
+
+      span {
+        color: var(--main-gray);
+        margin-left: 15px;
+        font-size: 0.5em;
+      }
+    }
+  }
+}
