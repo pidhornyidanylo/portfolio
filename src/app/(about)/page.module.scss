@@ -14,6 +14,7 @@
     .info {
       color: var(--main-gray);
       max-width: 100%;
+
       @media (max-width: 992px) {
         text-align: justify;
       }
@@ -22,10 +23,9 @@
     .aboutItemsContainer {
       margin-top: 30px;
       display: flex;
-      flex-wrap: wrap;
       gap: 100px;
 
-      @media (max-width: 535px) {
+      @media (max-width: 575px) {
         gap: 20px;
       }
     }

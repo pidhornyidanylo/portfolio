@@ -17,7 +17,7 @@
 
   div {
     display: flex;
-    align-items: center;
+    align-items: start;
     color: var(--secondary-gray);
 
     .itemTitle {
@@ -28,5 +28,11 @@
       font-size: 3em;
       font-weight: 500;
     }
+  }
+
+  @media (max-width: 575px) {
+    width: 167px;
+    height: 167px;
+    font-size: 0.85em;
   }
 }

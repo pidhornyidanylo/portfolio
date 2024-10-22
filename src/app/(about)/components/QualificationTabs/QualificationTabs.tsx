@@ -6,25 +6,7 @@ import {
   EducationPanel,
 } from './QualificationPanel/QualificationPanel';
 import { TABLIST_ITEMS, TABPANEL_ITEMS } from './TabsData';
-
-const tabStyles = {
-  transition: 'font-weight .1s ease',
-  justifyContent: 'flex-start',
-  padding: 0,
-  fontSize: '1.25em',
-  textTransform: 'none',
-  fontWeight: 'semi-bold',
-  color: 'var(--secondary-gray)',
-  borderBottom: 'none',
-  borderRadius: '5px',
-  '&.Mui-selected': {
-    backgroundColor: 'transparent',
-    fontWeight: 'bold',
-  },
-  '&:hover': {
-    backgroundColor: 'transparent !important',
-  },
-};
+import { tabListStyles, tabStyles } from './QualificationTabsStyles';
 
 const QualificationTabs = () => {
   return (
@@ -33,16 +15,7 @@ const QualificationTabs = () => {
       sx={{ maxWidth: '100%', backgroundColor: 'transparent' }}
     >
       <Tabs aria-label='Flex auto tabs' sx={{ backgroundColor: 'transparent' }}>
-        <TabList
-          disableUnderline
-          tabFlex='auto'
-          sx={{
-            backgroundColor: 'transparent',
-            gap: '20px',
-            width: '400px',
-            marginBottom: '30px',
-          }}
-        >
+        <TabList disableUnderline tabFlex='auto' sx={tabListStyles}>
           {TABLIST_ITEMS.map((item, index) => (
             <Tab key={index} disableIndicator sx={tabStyles}>
               <Image

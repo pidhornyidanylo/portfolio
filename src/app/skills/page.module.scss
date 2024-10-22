@@ -1,0 +1,43 @@
+.container {
+  height: 100%;
+
+  .title {
+    color: var(--secondary-gray);
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: 500;
+  }
+
+  .subTitle {
+    color: var(--main-gray);
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+
+  .frontendSection {
+    margin-top: 31px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .sectionTitle {
+      color: var(--secondary-gray);
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: 500;
+    }
+
+    .sectionContent {
+      max-height: 600px;
+      overflow-y: scroll;
+      margin-top: 75px;
+      width: 800px;
+
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './page.module.scss';
-import AboutItem from '@/components/routesComponents/about/SummaryItem/SummaryItem';
-import QualificationTabs from '@/components/routesComponents/about/QualificationTabs/QualificationTabs';
+import SummaryItem from './components/SummaryItem/SummaryItem';
+import QualificationTabs from './components/QualificationTabs/QualificationTabs';
 
 const aboutDataArray = [
   {
@@ -32,7 +32,7 @@ const About = () => {
         </p>
         <div className={styles.aboutItemsContainer}>
           {aboutDataArray.map((aboutItem) => (
-            <AboutItem
+            <SummaryItem
               key={aboutItem.title}
               title={aboutItem.title}
               icon={aboutItem.icon}
