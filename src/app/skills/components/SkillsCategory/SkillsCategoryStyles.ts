@@ -36,6 +36,7 @@ export const accordionGroupStyles = (theme: Theme) => ({
 
 export const typographyStyles = {
   flex: 1,
+  color: 'var(--secondary-gray)',
   fontSize: '1.3em',
   '@media (max-width: 425px)': {
     fontSize: '1em',

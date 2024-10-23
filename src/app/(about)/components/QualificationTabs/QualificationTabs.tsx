@@ -5,7 +5,7 @@ import {
   CertificationPanel,
   EducationPanel,
 } from './QualificationPanel/QualificationPanel';
-import { TABLIST_ITEMS, TABPANEL_ITEMS } from './TabsData';
+import { TABLIST_ITEMS, TABPANEL_ITEMS } from './data';
 import { tabListStyles, tabStyles } from './QualificationTabsStyles';
 
 const QualificationTabs = () => {

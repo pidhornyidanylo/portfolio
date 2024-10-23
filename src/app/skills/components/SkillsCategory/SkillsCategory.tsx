@@ -34,7 +34,13 @@ const SkillsCategory: React.FC<SkillsProps> = ({
     >
       <Accordion>
         <AccordionSummary sx={accordionStyles}>
-          <Image src={icon} alt={title} width={30} height={30} />
+          <Image
+            className='invertable-icon'
+            src={icon}
+            alt={title}
+            width={30}
+            height={30}
+          />
           <Typography sx={typographyStyles}>{title}</Typography>
         </AccordionSummary>
         <AccordionDetails>

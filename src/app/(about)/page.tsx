@@ -2,19 +2,7 @@ import React from 'react';
 import styles from './page.module.scss';
 import SummaryItem from './components/SummaryItem/SummaryItem';
 import QualificationTabs from './components/QualificationTabs/QualificationTabs';
-
-const aboutDataArray = [
-  {
-    count: 8,
-    title: 'Completed projects',
-    icon: '/assets/icons/about/projects.svg',
-  },
-  {
-    count: 5,
-    title: 'Finished courses',
-    icon: '/assets/icons/about/courses.svg',
-  },
-];
+import { aboutDataArray } from './data';
 
 const About = () => {
   return (

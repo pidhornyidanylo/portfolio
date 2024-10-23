@@ -17,6 +17,7 @@ const SkillItem = ({ skillItem }: { skillItem: SkillItemProps }) => {
   return (
     <Stack sx={containerStyles} key={skillItem.title}>
       <Image
+        className='invertable-icon'
         src={skillItem.iconUrl}
         width={30}
         height={30}

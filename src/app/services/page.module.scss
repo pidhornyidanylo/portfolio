@@ -1,0 +1,80 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title,
+.subTitle,
+.myOffer {
+  text-align: center;
+  font-weight: 500;
+}
+
+.title {
+  color: var(--secondary-gray);
+  font-size: 1.7em;
+}
+
+.subTitle {
+  margin-top: 10px;
+  color: var(--main-gray);
+  font-size: 1.2em;
+}
+
+.myOffer {
+  margin-top: 30px;
+  color: var(--main-gray);
+  font-size: 1.2em;
+  max-width: 1200px;
+
+  @media (max-width: 992px) {
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+
+.offersSection {
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 450px));
+  grid-template-rows: repeat(2, minmax(150px, 250px));
+  gap: 40px;
+}
+
+.offersSection .div1,
+.div2,
+.div3,
+.div4 {
+  opacity: 0.85;
+  box-shadow: var(--main-blue) 0px 0px 0px 2px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 5s ease;
+}
+
+.offersSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.offersSection .div1:hover img,
+.div2:hover img,
+.div3:hover img,
+.div4:hover img {
+  transform: scale(1.5);
+  transition: transform 20s ease;
+}
+
+@media (max-width: 992px) {
+  .offersSection {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 250px);
+  }
+}
