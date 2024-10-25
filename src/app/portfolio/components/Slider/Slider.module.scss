@@ -1,0 +1,20 @@
+.slider {
+  width: 1000px;
+  max-height: 500px;
+
+  @media (max-width: 1400px) {
+    width: 500px;
+    min-width: 350px;
+    max-height: 700px;
+  }
+
+  @media (max-width: 575px) {
+    width: 355px;
+    max-height: 700px;
+  }
+
+  .sliderSlide {
+    padding-bottom: 40px;
+    background-color: transparent;
+  }
+}

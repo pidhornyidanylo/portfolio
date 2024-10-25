@@ -1,0 +1,32 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title,
+.subTitle,
+.myOffer {
+  text-align: center;
+  font-weight: 500;
+}
+
+.title {
+  color: var(--secondary-gray);
+  font-size: 1.7em;
+}
+
+.subTitle {
+  margin-top: 10px;
+  color: var(--main-gray);
+  font-size: 1.2em;
+}
+
+.worksSection {
+  margin-top: 150px;
+
+  @media (max-width: 992px) {
+    margin-top: 75px;
+  }
+}
